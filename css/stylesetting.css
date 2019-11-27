@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background: #FAFAFA;
-  background-image: url(kanban-1.jpg);
+  background-image: url('../figures/kanban-1.jpg');
   background-position: center;
 }
 

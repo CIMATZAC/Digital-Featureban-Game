@@ -7,15 +7,11 @@ body{
 
 }
 
-
-
-
-
 .showcase::after{
     content: '';
     height: 100vh;
     width: 100%;
-    background-image: url(kanban-1.jpg);
+    background-image: url('../figures/kanban-1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,7 +43,7 @@ ntent{
     text-align: center;
     transition: all 1000ms;
     color: #7C1717;
-    
+
 }
 
 .content .logo{
@@ -73,20 +69,20 @@ ntent{
     border-radius: 6px;
     border: 2px solid #0016b0;
     position: relative;
-    left: 560px;;
+    left: 560px;
     top: 30px;
     bottom: 50px;
-     
 
-    
+
+
 }
 .button:hover{
     color: #1883ba;
     background-color: #ffffff;
 }
 
- 
-    
+
+
 
 
 .content .text{
@@ -141,7 +137,7 @@ footer p{
 @media(max-width: 560px){
     .showcase::after{
         height: 50vh;
-    
+
     }
     .content{
         top: 5%;
@@ -164,7 +160,3 @@ footer p{
         padding: 1.2rem 1rem;
     }
 }
-
-
-
-
