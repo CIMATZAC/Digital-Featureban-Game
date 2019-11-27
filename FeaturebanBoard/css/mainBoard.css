@@ -1,0 +1,148 @@
+.sidenav {
+  height: 100%;
+  width: auto;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding-top: 10px;
+}
+
+#left-sidebar{
+  left: 0;
+  margin-right: 5px;
+  background-color: #EEE;
+}
+
+#right-sidebar{
+  right: 0;
+  margin-left: 5px;
+  background-color: #EEE;
+}
+
+.img-fluid{
+  height: auto;
+  width: 250px;
+}
+
+.rules{
+  margin-top: 50px
+}
+
+.button {
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  border: #000013 0.14rem solid;
+  border-radius: 0.2rem;
+  color: #000013;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+#taskText {
+  background: #fff;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  height: 50px;
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+
+.add-button {
+  background-color: #ffcb1e;
+  padding: 0 1rem;
+  height: 30px;
+  width: 50%;
+  position: relative;
+  left: 25%;
+  align-self: center;
+}
+
+.add-button:hover {
+  background-color: #ffdd6e;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 1.6rem auto;
+}
+
+.column-header {
+  padding: 0.1rem;
+  text-align: center;
+}
+
+.column-header h3 {
+  text-align: left;
+}
+
+.column-header h1 {
+  text-align: center;
+  border-bottom: #000013 0.2rem solid;
+}
+
+.ready-column .column-header {
+  background: #ff6600;
+  border: #803300 0.2rem solid;
+  border-radius: 0.2rem;
+}
+
+.col2-column .column-header {
+  background: #3366ff;
+  border: #0033cc 0.2rem solid;
+  border-radius: 0.2rem;
+}
+
+.col3-column .column-header {
+  background: #00cc00;
+  border: #008000 0.2rem solid;
+  border-radius: 0.2rem;
+}
+
+.complete-column .column-header {
+  background: #ff3333;
+  border: #b30000 0.2rem solid;
+  border-radius: 0.2rem;
+}
+
+.task-list {
+  min-height: 5rem;
+}
+
+.task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  vertical-align: middle;
+  list-style-type: none;
+  background: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0.4rem;
+  height: 10rem;
+  border: #000013 0.1rem solid;
+  border-radius: 0.2rem;
+  cursor: move;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  right: 10%
+}
+
+.task p {
+  margin: auto;
+}

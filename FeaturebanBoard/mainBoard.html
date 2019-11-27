@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Digital Featureban Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mainBoard.css">
+  <link rel="stylesheet" href="css/coin.css">
+  <link rel="stylesheet" href="css/dragula.css">
+</head>
+<body>
+  <div class="container">
+      <div class="col-md-2">
+        <div id="left-sidebar" class="sidenav">
+          <!-- Add new activities goes here -->
+          <form class="form-horizontal">
+            <div class="form-group">
+              <input id="taskText" type="text" placeholder="New task..." onkeydown="if (event.keyCode == 13) document.getElementById('add').click()">
+            </div>
+            <div class="form-group">
+              <button id="add" class="button add-button" type="button" onclick="addTask()">Add task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <!-- Board goes here -->
+        <div class="column-header">
+          <h1>F E A T U R E B A N</h1>
+        </div>
+        <div class="col-md-4">
+          <div class="column-header">
+            <h3>Iteration:</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="column-header">
+            <h3>Turn:</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="column-header">
+            <h3>Player:</h3>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-3 ready-column">
+            <div class="column-header">
+              <h4>Ready</h4>
+            </div>
+            <ul class="task-list" id="ready">
+            </ul>
+          </div>
+          <div class="col-md-3 col2-column">
+            <div class="column-header">
+              <h4>Col 2</h4>
+            </div>
+            <ul class="task-list" id="col2">
+            </ul>
+          </div>
+          <div class="col-md-3 col3-column">
+            <div class="column-header">
+              <h4>Col 3</h4>
+            </div>
+            <ul class="task-list" id="col3">
+            </ul>
+          </div>
+          <div class="col-md-3 complete-column">
+            <div class="column-header">
+              <h4>Complete</h4>
+            </div>
+            <ul class="task-list" id="complete">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div id="right-sidebar" class="sidenav">
+          <div class="rules">
+            <img src="images/red_rule.png" class="img-fluid" alt="Red rules">
+          </div>
+          <div class="rules">
+            <img src="images/black_rule.png" class="img-fluid" alt="Black rules">
+          </div>
+          <div id="coin">
+            <div class="side-a"></div>
+            <div class="side-b"></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src='js/dragula.js'></script>
+  <script src="js/mainBoard.js"></script>
+  <script src="js/coin.js"></script>
+
+</body>
+</html>
