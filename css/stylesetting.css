@@ -242,20 +242,15 @@ input, select, textarea {
   margin-top: 15px;
   box-shadow: 0 0 rgba(0, 0, 0, 0.5);
 }
-.input[type=text] {
-  width: 180px;
-  height: 30px;
-  background-color:#000000;
-  color: #f72f4e;
-  font-family: Lato;
-  padding-left: auto;
-  padding-right: auto;
-  text-align: center;
-  font-size: 18px;
-  border-style: solid;
-  border-width: thin;
-  border-color: rgb(193, 218, 214);
-  border-radius: 3px;
+input[type=text], select {
+  background: #000000;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .input.form-error {
