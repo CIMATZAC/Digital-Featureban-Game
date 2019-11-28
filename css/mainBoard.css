@@ -3,7 +3,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;  
+  -o-background-size: cover;
 }
 
 .col-md-2 .col-md-8{
@@ -111,7 +111,7 @@ body {
 }
 
 .task-list {
-  min-height: 5rem;
+  min-height: 10rem;
 }
 
 .task {
