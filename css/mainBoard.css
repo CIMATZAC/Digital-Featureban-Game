@@ -111,7 +111,7 @@ body {
 }
 
 .task-list {
-  min-height: 10rem;
+  min-height: 100rem;
 }
 
 .task {
