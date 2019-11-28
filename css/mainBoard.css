@@ -3,18 +3,13 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;  
-}
-
-.col-md-2 .col-md-8{
-  display: table-column;
-  height: 100%;
+  -o-background-size: cover;
 }
 
 .sidebar {
   height: 100%;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 20px;  
 }
 
 .img-fluid{

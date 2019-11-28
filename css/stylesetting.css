@@ -226,8 +226,6 @@ input, select, textarea {
   padding: 10px;
 }
 
-
-
 .input.submit {
   background-color: #FFF;
   color: #f72f4e;
@@ -241,21 +239,6 @@ input, select, textarea {
 .input.submit:active {
   margin-top: 15px;
   box-shadow: 0 0 rgba(0, 0, 0, 0.5);
-}
-.input[type=text] {
-  width: 180px;
-  height: 30px;
-  background-color:#000000;
-  color: #f72f4e;
-  font-family: Lato;
-  padding-left: auto;
-  padding-right: auto;
-  text-align: center;
-  font-size: 18px;
-  border-style: solid;
-  border-width: thin;
-  border-color: rgb(193, 218, 214);
-  border-radius: 3px;
 }
 
 .input.form-error {

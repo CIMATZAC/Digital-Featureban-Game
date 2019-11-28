@@ -25,6 +25,14 @@
   background-color: #3e3e3e;
 }
 
+.side-a:hover{
+  background-color: #ff0000;
+}
+
+.side-b:hover{
+  background-color: #6e6e6e;
+}
+
 #coin {
   transition: -webkit-transform 1s ease-in;
   -webkit-transform-style: preserve-3d;
