@@ -226,8 +226,6 @@ input, select, textarea {
   padding: 10px;
 }
 
-
-
 .input.submit {
   background-color: #FFF;
   color: #f72f4e;
@@ -242,6 +240,7 @@ input, select, textarea {
   margin-top: 15px;
   box-shadow: 0 0 rgba(0, 0, 0, 0.5);
 }
+<<<<<<< HEAD
 input[type=text], select {
   background: #000000;
   width: 100%;
@@ -252,6 +251,8 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+=======
+>>>>>>> ea4e7c208eedaf9eadae530f441b551e6bcfc813
 
 .input.form-error {
   -webkit-animation: error 0.8s ease;
