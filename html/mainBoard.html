@@ -29,19 +29,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="column-header">
-          <h3>Iteration:</h3>
+          <h3>
+            Iteration:
+            <label id="iterationNumber">1</label>
+            <button id="addIteration" class="button add-number-button btn-info btn-xs" type="button" onclick="addIteration()"><span class='glyphicon glyphicon-plus'></span></button>
+          </h3>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="column-header">
-          <h3>Turn:</h3>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="column-header">
-          <h3>Player:</h3>
+          <h3>
+            Turn:
+            <label id="turnNumber">1</label>
+            <button id="addTurn" class="button add-number-button btn-info btn-xs" type="button" onclick="addTurn()"><span class='glyphicon glyphicon-plus'></span></button>
+          </h3>
         </div>
       </div>
     </div>
@@ -55,14 +58,28 @@
       </div>
       <div class="col-md-3 col2-column">
         <div class="column-header">
-          <h4>Col 2 ( )</h4>
+          <h4>
+            <input type="text" id="customColTitle" list="col2Title"/>
+              <datalist id="col2Title">
+                <option>Design</option>
+                <option>Prototype</option>
+              </datalist>
+              <label class="colLimits" hidden>(3)</label>
+          </h4>
         </div>
         <ul class="task-list" id="col2">
         </ul>
       </div>
       <div class="col-md-3 col3-column">
         <div class="column-header">
-          <h4>Col 3 ( )</h4>
+          <h4>
+            <input type="text" id="customColTitle" list="col3Title"/>
+              <datalist id="col3Title">
+                <option>Build</option>
+                <option>Test</option>
+              </datalist>
+              <label class="colLimits" hidden>(3)</label>
+          </h4>
         </div>
         <ul class="task-list" id="col3">
         </ul>

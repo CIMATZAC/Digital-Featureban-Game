@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 body {
   background: url('../images/boardBackground.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -31,6 +38,12 @@ body {
   padding: 0.6rem 1rem;
   margin-bottom: 0.3rem;
   cursor: pointer;
+}
+
+.btn-danger{
+  position: relative;
+  right: 0;
+  margin-left: 80px;
 }
 
 #taskText {
@@ -106,7 +119,7 @@ body {
 }
 
 .task-list {
-  min-height: 100rem;
+  min-height: 55rem;
   border-style: solid;
   border-width: 1px;
   border-color: black;
@@ -119,23 +132,65 @@ body {
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: flex-start;
   vertical-align: middle;
   list-style-type: none;
   background: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   margin: 0.4rem;
-  height: 10rem;
+  height: auto;
   border: #000013 0.1rem solid;
   border-radius: 0.2rem;
   cursor: move;
   text-align: center;
-  vertical-align: middle;
   position: relative;
   right: 12%;
 }
 
+li{
+  list-style-type: none;
+}
+
+label{
+  margin: 2px;
+}
+
+#names{
+  width: 70px;
+}
+
+.portlet-header{
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.portlet-content{
+  margin: 5px;
+  padding-top: 10px;
+}
+
+.portlet-footer{
+  margin-bottom: 5px;
+  margin-left: 5px;
+  text-align: left;
+}
+
 .task p {
+  text-align: center;
   margin: auto;
+}
+
+#customColTitle{
+  text-align: center;
+  width: 55%;
+}
+
+#col2Title{
+  text-align: center;
+}
+
+#col3Title{
+  text-align: center;
 }
