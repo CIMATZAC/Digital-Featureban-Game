@@ -43,7 +43,7 @@ body {
 .btn-danger{
   position: relative;
   right: 0;
-  margin-left: 80px;
+  margin-left: 65px;
 }
 
 #taskText {
@@ -119,12 +119,36 @@ body {
 }
 
 .task-list {
-  min-height: 55rem;
+  min-height: 60rem;
   border-style: solid;
   border-width: 1px;
   border-color: black;
   border-radius: 2px;
+}
+
+ul{
   overflow-y: auto;
+  max-height: 55rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .task {
@@ -155,6 +179,10 @@ li{
 
 label{
   margin: 2px;
+}
+
+.stats, .startDay, .endDay{
+  font-size: 12px;
 }
 
 #names{

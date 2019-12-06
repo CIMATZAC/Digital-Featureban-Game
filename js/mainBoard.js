@@ -2,6 +2,11 @@
 var turn = parseInt(document.getElementById('turnNumber').textContent);
 var iteration = parseInt(document.getElementById('iterationNumber').textContent);
 
+/* Variables para identificar el elemento, el origen y el destino del evento de drop */
+var element;
+var sourceCol;
+var targetCol;
+
 /* Custom Dragula JS */
 var drake = dragula([
   document.getElementById("ready"),
@@ -10,14 +15,16 @@ var drake = dragula([
   document.getElementById("complete")
 ]);
 
-drake.on("drop", function(el, target){
+drake.on("drop", function(el, target, source){
     el.className += "ex-moved";
     element = el;
+    targetCol = target;
+    sourceCol = source;
 });
 
 /* Event after drop */
 drake.on("dragend", function(el){
-    showStats(el);
+  showStats();
 });
 
 /*
@@ -29,21 +36,25 @@ function removeButton(el) {
 */
 
 /* After iteration 3 each time a task is dropped to the second column, stats will be shown */
-function showStats(el) {
-  var targetCol = el.parentNode.id;
-  if(targetCol == "col2" && iteration == 3){
+function showStats() {
+  /* Cambia el valor de toReady para saber en que iteracion es pasada de ready a col2 */
+  if(iteration == 3 && sourceCol.id == "ready" && targetCol.id == "col2"){
+    element.getElementsByClassName('toReady')[0].innerHTML = iteration;
+  }
+
+  if (element.getElementsByClassName('toReady')[0].textContent == 3 && sourceCol.id == "ready" && targetCol.id == "col2") {
     /* Show StarDay label and set actual turn */
-    if(el.getElementsByClassName('stats')[0].hasAttribute("hidden") && el.getElementsByClassName('startDay')[0].hasAttribute("hidden")){
-      el.getElementsByClassName('stats')[0].attributes.removeNamedItem("hidden");
-      el.getElementsByClassName('startDay')[0].attributes.removeNamedItem("hidden");
-      el.getElementsByClassName('startDay')[0].innerHTML = turn;
+    if(element.getElementsByClassName('stats')[0].hasAttribute("hidden") && element.getElementsByClassName('startDay')[0].hasAttribute("hidden")){
+      element.getElementsByClassName('stats')[0].attributes.removeNamedItem("hidden");
+      element.getElementsByClassName('startDay')[0].attributes.removeNamedItem("hidden");
+      element.getElementsByClassName('startDay')[0].innerHTML = turn;
     }
-  } else if (targetCol == "complete" && iteration == 3) {
-    /* Show EndDay label and set actual turn */
-    if(el.getElementsByClassName('stats')[1].hasAttribute("hidden") && el.getElementsByClassName('endDay')[0].hasAttribute("hidden")){
-      el.getElementsByClassName('stats')[1].attributes.removeNamedItem("hidden");
-      el.getElementsByClassName('endDay')[0].attributes.removeNamedItem("hidden");
-      el.getElementsByClassName('endDay')[0].innerHTML = turn;
+  } else if (element.getElementsByClassName('toReady')[0].textContent == 3 && sourceCol.id == "col3" && targetCol.id == "complete") {
+    /*Show EndDay label and set actual turn*/
+    if(element.getElementsByClassName('stats')[1].hasAttribute("hidden") && element.getElementsByClassName('endDay')[0].hasAttribute("hidden")){
+      element.getElementsByClassName('stats')[1].attributes.removeNamedItem("hidden");
+      element.getElementsByClassName('endDay')[0].attributes.removeNamedItem("hidden");
+      element.getElementsByClassName('endDay')[0].innerHTML = turn;
     }
   }
 }
@@ -54,16 +65,17 @@ function addTask() {
   var inputTask = document.getElementById("taskText").value;
   /* Add task to the 'To Do' column */
   document.getElementById("ready").innerHTML +=
-  "<li><div class='task'><div class='portlet'><div class='portlet-header'><form class='form-inline'><div class='form-group'><select class='form-control' id='names'><option></option><option>MG</option><option>AM</option><option>CT</option><option>PM</option><option>JS</option></select></div><div class='form-group'><label class='stats' hidden>SD</label><label class='startDay' hidden></label></div><div class='form-group'><label class='stats' hidden>ED</label><label class='endDay' hidden> 8</label></div></form></div><div class='portlet-content'><p>" +  inputTask + "</p><br></div><div class='portlet-footer'><form class='form-inline'><div class='form-group'><div class='btn-group-toggle' data-toggle='buttons'><label class='btn btn-primary btn-sm'><input type='checkbox' checked autocomplete='off'>B</label></div></div><button type='button' class='btn btn-danger btn-sm' onclick='removeTask(this.parentNode.parentNode.parentNode.parentNode)'><span class='glyphicon glyphicon-trash'></span></button></form></div></div></div></li>"
-    /*"<li class='task'><p>" + inputTask + "</p></li>";*/
+  "<li><div class='task'><div class='portlet'><div class='portlet-header'><form class='form-inline'><div class='form-group'><select class='form-control' id='names'><option></option><option>MG</option><option>AM</option><option>CT</option><option>PM</option><option>JS</option></select></div><div class='form-group'><label class='stats' hidden>SD</label><label class='startDay' hidden></label></div><div class='form-group'><label class='stats' hidden>ED</label><label class='endDay' hidden></label></div></form></div><div class='portlet-content'><p>" +  inputTask + "</p><br></div><div class='portlet-footer'><form class='form-inline'><div class='form-group'><div class='btn-group-toggle' data-toggle='buttons'><label class='btn btn-primary btn-sm'><input type='checkbox' checked autocomplete='off'>B</label></div></div><label class='toReady' hidden>"+ iteration + "</label><button type='button' class='btn btn-danger btn-sm' onclick='removeTask(this.parentNode.parentNode.parentNode.parentNode)'><span class='glyphicon glyphicon-trash'></span></button></form></div></div></div></li>"
 
   /* Clear task text from input after adding task */
   document.getElementById("taskText").value = "";
 }
 
-/* Funtion to add turns to the game */
+/* Funtion to add turns to the game with a limit of 99 */
 function addTurn() {
-  turn += 1;
+  if(turn < 99){
+    turn += 1;
+  }
   document.getElementById('turnNumber').innerHTML = turn;
 }
 
