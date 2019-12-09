@@ -29,13 +29,16 @@
             </div>
 
 
-            <form>
+            <form action="mainBoard.html" method="get">
 
                 <input type="button" class="input submit" id="add_field" value="ADD PLAYER">
                 <div id="listas">
-                    <div><input type="text" name="campo[]"></div>
+                    <div><input type="text" name="player-1" required></div>
+                    <div><input type="text" name="player-2" required></div>
+                    <div><input type="text" name="player-3" required></div>
+                    <div><input type="text" name="player-4" required></div>
                 </div>
-                <input class='input submit' type='submit' value='PLAY' onclick="location.href='mainBoard.html'">
+                <input class='input submit' type='submit' value='PLAY'>
 
             </form>
         </div>

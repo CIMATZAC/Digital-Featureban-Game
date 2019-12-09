@@ -1,3 +1,46 @@
+/* Read params from URL */
+function getSearchParams(k){
+ var p={};
+ location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+ return k?p[k]:p;
+}
+
+/* Var for complete names and for initials*/
+var names = new Array();
+var newNames = new Array();
+
+/* Function to create an array of names*/
+function createNamesArray(){
+  if(getSearchParams("player-1") != null){
+    names[0] = getSearchParams("player-1");
+  }
+  if(getSearchParams("player-2") != null){
+    names[1] = getSearchParams("player-2");
+  }
+  if(getSearchParams("player-3") != null){
+    names[2] = getSearchParams("player-3");
+  }
+  if(getSearchParams("player-4") != null){
+    names[3] = getSearchParams("player-4");
+  }
+  if(getSearchParams("player-5") != null){
+    names[4] = getSearchParams("player-5");
+  }
+  if(getSearchParams("player-6") != null){
+    names[5] = getSearchParams("player-6");
+  }
+}
+
+/* Get names initials and store them in newNames */
+function getNamesInitials(){
+  createNamesArray();
+  for (var i = 0; i < names.length; i++) {
+    var initials = names[i].match(/\b\w/g) || [];
+    initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
+    newNames[i] = initials;
+  }
+}
+
 /* Variables del manejo de la iteración y turnos */
 var turn = parseInt(document.getElementById('turnNumber').textContent);
 var iteration = parseInt(document.getElementById('iterationNumber').textContent);
@@ -64,8 +107,13 @@ function addTask() {
   /* Get task text from input */
   var inputTask = document.getElementById("taskText").value;
   /* Add task to the 'To Do' column */
+  getNamesInitials();
+  var selectPlayers = "";
+  for (var i = 0; i < newNames.length; i++) {
+    selectPlayers = selectPlayers + "<option>" + newNames[i] + "</option>"
+  }
   document.getElementById("ready").innerHTML +=
-  "<li><div class='task'><div class='portlet'><div class='portlet-header'><form class='form-inline'><div class='form-group'><select class='form-control' id='names'><option></option><option>MG</option><option>AM</option><option>CT</option><option>PM</option><option>JS</option></select></div><div class='form-group'><label class='stats' hidden>SD</label><label class='startDay' hidden></label></div><div class='form-group'><label class='stats' hidden>ED</label><label class='endDay' hidden></label></div></form></div><div class='portlet-content'><p>" +  inputTask + "</p><br></div><div class='portlet-footer'><form class='form-inline'><div class='form-group'><div class='btn-group-toggle' data-toggle='buttons'><label class='btn btn-primary btn-sm'><input type='checkbox' checked autocomplete='off'>B</label></div></div><label class='toReady' hidden>"+ iteration + "</label><button type='button' class='btn btn-danger btn-sm' onclick='removeTask(this.parentNode.parentNode.parentNode.parentNode)'><span class='glyphicon glyphicon-trash'></span></button></form></div></div></div></li>"
+  "<li><div class='task'><div class='portlet'><div class='portlet-header'><form class='form-inline'><div class='form-group'><select class='form-control' id='names'><option></option>" + selectPlayers + "</select></div><div class='form-group'><label class='stats' hidden>SD</label><label class='startDay' hidden></label></div><div class='form-group'><label class='stats' hidden>ED</label><label class='endDay' hidden></label></div></form></div><div class='portlet-content'><p>" +  inputTask + "</p></div><div class='portlet-footer'><form class='form-inline'><div class='form-group'><div class='btn-group-toggle' data-toggle='buttons'><label class='btn btn-primary btn-sm'><input type='checkbox' checked autocomplete='off'>B</label></div></div><label class='toReady' hidden>"+ iteration + "</label><button type='button' class='btn btn-danger btn-sm' onclick='removeTask(this.parentNode.parentNode.parentNode.parentNode)'><span class='glyphicon glyphicon-trash'></span></button></form></div></div></div></li>"
 
   /* Clear task text from input after adding task */
   document.getElementById("taskText").value = "";
