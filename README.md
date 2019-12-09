@@ -7,4 +7,4 @@ Digital Featureban Game is copyright © 2019 Team Noobies. It is based on Featur
 copyright © 2014-2019.
 
 Digital Featureban Game is licensed under the Creative Commons Attribution-ShareAlike 4.0
-International License.
+International License. [LICENCE CC BY SA](https://github.com/CIMATZAC/Digital-Featureban-Game/blob/master/LICENSE-CC-BY-SA)
