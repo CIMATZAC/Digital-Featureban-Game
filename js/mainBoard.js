@@ -68,15 +68,15 @@ drake.on("drop", function(el, target, source){
 /* Event after drop */
 drake.on("dragend", function(el){
   showStats();
+  removeButton(el);
 });
 
-/*
+
 function removeButton(el) {
   if(el.getElementsByClassName('btn')[1] != null && el.parentNode.id != "ready"){
     el.getElementsByClassName('btn')[1].remove();
   }
 }
-*/
 
 /* After iteration 3 each time a task is dropped to the second column, stats will be shown */
 function showStats() {
