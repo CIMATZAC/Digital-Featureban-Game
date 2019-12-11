@@ -24,69 +24,74 @@
             </div>
         </div>
     </header>
-    <section class="services bg-dark">
+    <section class="services bg-light">
         <div class="container center">
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">PLAY</button>
-          <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
+            <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#myModal">PLAY</button>
+            <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Enter the names of the players</h4>
-              </div>
-              <div class="modal-body">
-                <form action="html/mainBoard.html" method="get">
-                    <div class="form-group">
-                      <div class="col">
-                        <button class='btn btn-primary' id="add_field" type='button'>ADD PLAYER</button>
-                      </div>
-                    </div>
-                    <div class="players" id="listas">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Enter the names of the players</h4>
+                </div>
+                <div class="modal-body">
+                  <form action="html/mainBoard.html" method="get">
                       <div class="form-group">
                         <div class="col">
-                          <input class="form-control" type="text" placeholder="Player 1" name="player-1" required>
+                          <button class='btn btn-primary' id="add_field" type='button'>ADD PLAYER</button>
                         </div>
                       </div>
-  	                   <div class="form-group">
-                         <div class="col">
-                           <input class="form-control" type="text" placeholder="Player 2" name="player-2" required>
+                      <div class="players" id="listas">
+                        <div class="form-group">
+                          <div class="col">
+                            <input class="form-control" type="text" placeholder="Player 1" name="player-1" required>
+                          </div>
+                        </div>
+                         <div class="form-group">
+                           <div class="col">
+                             <input class="form-control" type="text" placeholder="Player 2" name="player-2" required>
+                           </div>
                          </div>
-                       </div>
+                         <div class="form-group">
+                           <div class="col">
+                             <input class="form-control" type="text" placeholder="Player 3" name="player-3" required>
+                           </div>
+                         </div>
+                         <div class="form-group">
+                           <div class="col">
+                             <input class="form-control" type="text" placeholder="Player 4" name="player-4" required>
+                           </div>
+                         </div>
+                      </div>
                        <div class="form-group">
                          <div class="col">
-                           <input class="form-control" type="text" placeholder="Player 3" name="player-3" required>
+                           <button class='btn btn-primary submit' type='submit'>START</button>
                          </div>
                        </div>
-                       <div class="form-group">
-                         <div class="col">
-                           <input class="form-control" type="text" placeholder="Player 4" name="player-4" required>
-                         </div>
-                       </div>
-                    </div>
-                     <div class="form-group">
-                       <div class="col">
-                         <button class='btn btn-primary submit' type='submit'>PLAY</button>
-                       </div>
-                     </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <h3>Introduction</h3>
-        <p class="introduction">
-            Featureban is a simple, fun and highly customisable kanban simulation game.
-            Since its creation in 2019 it has been used by trainers and coaches in Lean, Agile and
-            Kanban-Related events the world over.
-
-            The game starts simple with visual management(iteration 1 ); after taht we layer on things like WIP
-            limits
-            (iteration 2 ) and metrics (iteration 3). This incremental approach is very much by design and you
-            are free to introduce your
-            own elements in a similar fashion
-        </p>
+          <div class="row">
+            <div class="grid-2">
+              <div>
+                <h3>Featureban</h3>
+                <p class="introduction">
+                    Featureban is a simple Kanban simulation game. It has been used by trainers and coaches in Lean, Agile and Kanban related events the world over.</p>
+                <p class="introduction">
+                  <li class="introduction">Iteration 1: The game starts simple with visual management</li>
+                  <li class="introduction">Iteration 2: Limits are introduced to the second and third column</li>
+                  <li class="introduction">Iteration 3: Some metrics are captured.</li>
+                </p>
+              </div>
+              <div class="center">
+                <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
         </div>
     </section>
 
@@ -97,14 +102,11 @@
                     <i class="fas fa-laptop-code fa-10x"></i>
                 </div>
                 <div>
-                    <h3>About Us</h3>
+                    <h3>About Digital Featureban Game</h3>
                     <p class="introduction">
-                      Agendashift™ is brought to you by Positive Incline Ltd, UK-based specialists in Lean and Agile.
-                        Founder Mike Burrows is known to the Agile and Lean-Agile communities as the author of Kanban
-                        from the Inside (2014) and Agendashift (2018), the creator of the Featureban and Changeban
-                        simulation games, a keynote speaker at conferences around the world, and as a consultant, coach,
-                        and trainer. His new book Right to Left: The digital leader’s guide to Lean and Agile was
-                        published August 15th 2019.
+                      Digital Featureban Game is a tool that contains the same elements necessary to implement the game of Featureban.
+                      Its objective is to reduce the costs of the material, as well as to avoid its waste.
+                      It allows players to make mistakes so that they can learn from them.
                       </p>
 
                 </div>
@@ -112,7 +114,11 @@
         </div>
     </section>
     <footer class="center bg-dark">
-      <p>Creative Commons Attribution Share Alike 4.0 International</p>
+      <p> Digital Featureban Game. It is based on Featureban <a href="http://agendashift.com/featureban">(agendashift.com/featureban)</a>
+ by Mike Burrows of Agendashift™ / Positive Incline Ltd,
+copyright © 2014-2019.</p>
+      <p>Digital Featureban Games is licensed under the Creative Commons Attribution Share Alike 4.0 International</p>
+      <p>To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US">Creative Commons Attribution Share Alike 4.0 International</a>.</p>
       <p><img src="images/footer.png" height="7%" width="7%" ></p>
     </footer>
 
