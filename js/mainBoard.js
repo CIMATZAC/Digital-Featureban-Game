@@ -67,6 +67,7 @@ drake.on("drop", function(el, target, source){
 
 /* Event after drop */
 drake.on("dragend", function(el){
+  element = el;
   showStats();
   removeButton(el);
 });
