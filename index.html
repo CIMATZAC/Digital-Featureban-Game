@@ -8,53 +8,85 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href='css/style.css'>
-    <title>FEATUREBAN GAME</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>DIGITAL FEATUREBAN GAME</title>
 </head>
 
 <body>
     <header class="showcase">
-
         <div>
             <div class="content">
-                <img src="figures/cimat.png" class="logo" alt="FEATUREBAN GAME">
                 <div class="title">
-                    WELCOME TO FEATUREBAN GAME
-                </div>
-                <div class="text">
-
-
-
-
+                    WELCOME TO DIGITAL FEATUREBAN GAME
                 </div>
             </div>
-
         </div>
     </header>
-
-    <div>
-        <button class="button">
-            <a href="html/setting.html">PLAY</a>
-        </button>
-    </div>
-
-
-
-    <section class="services">
+    <section class="services bg-dark">
         <div class="container center">
-            <div>
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">PLAY</button>
+          <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
 
-                <h3>Introduction</h3>
-                <p>Featureban is a simple, fun and highly customisable kanban simulation game.
-                    Since its creation in 2019 it has been used by trainers and coaches in Lean, Agile and
-                    Kanban-Related events the world over.
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Enter the names of the players</h4>
+              </div>
+              <div class="modal-body">
+                <form action="html/mainBoard.html" method="get">
+                    <div class="form-group">
+                      <div class="col">
+                        <button class='btn btn-primary' id="add_field" type='button'>ADD PLAYER</button>
+                      </div>
+                    </div>
+                    <div class="players" id="listas">
+                      <div class="form-group">
+                        <div class="col">
+                          <input class="form-control" type="text" placeholder="Player 1" name="player-1" required>
+                        </div>
+                      </div>
+  	                   <div class="form-group">
+                         <div class="col">
+                           <input class="form-control" type="text" placeholder="Player 2" name="player-2" required>
+                         </div>
+                       </div>
+                       <div class="form-group">
+                         <div class="col">
+                           <input class="form-control" type="text" placeholder="Player 3" name="player-3" required>
+                         </div>
+                       </div>
+                       <div class="form-group">
+                         <div class="col">
+                           <input class="form-control" type="text" placeholder="Player 4" name="player-4" required>
+                         </div>
+                       </div>
+                    </div>
+                     <div class="form-group">
+                       <div class="col">
+                         <button class='btn btn-primary submit' type='submit'>PLAY</button>
+                       </div>
+                     </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Introduction</h3>
+        <p class="introduction">
+            Featureban is a simple, fun and highly customisable kanban simulation game.
+            Since its creation in 2019 it has been used by trainers and coaches in Lean, Agile and
+            Kanban-Related events the world over.
 
-                    The game starts simple with visual management(iteration 1 ); after taht we layer on things like WIP
-                    limits
-                    (iteration 2 ) and metrics (iteration 3). This incremental approach is very much by design and you
-                    are free to introduce your
-                    own elements in a similar fashion
-                </p>
-            </div>            
+            The game starts simple with visual management(iteration 1 ); after taht we layer on things like WIP
+            limits
+            (iteration 2 ) and metrics (iteration 3). This incremental approach is very much by design and you
+            are free to introduce your
+            own elements in a similar fashion
+        </p>
         </div>
     </section>
 
@@ -66,23 +98,28 @@
                 </div>
                 <div>
                     <h3>About Us</h3>
-                    <p>Agendashift™ is brought to you by Positive Incline Ltd, UK-based specialists in Lean and Agile.
+                    <p class="introduction">
+                      Agendashift™ is brought to you by Positive Incline Ltd, UK-based specialists in Lean and Agile.
                         Founder Mike Burrows is known to the Agile and Lean-Agile communities as the author of Kanban
                         from the Inside (2014) and Agendashift (2018), the creator of the Featureban and Changeban
                         simulation games, a keynote speaker at conferences around the world, and as a consultant, coach,
                         and trainer. His new book Right to Left: The digital leader’s guide to Lean and Agile was
-                        published August 15th 2019.</p>
+                        published August 15th 2019.
+                      </p>
 
                 </div>
-
             </div>
-
         </div>
-
     </section>
     <footer class="center bg-dark">
-        <p><img src="images/footer.png"></p>
+      <p>Creative Commons Attribution Share Alike 4.0 International</p>
+      <p><img src="images/footer.png" height="7%" width="7%" ></p>
     </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scriptaddplayer.js"></script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@ var noPlayer = 5;
 $('#add_field').click(function (e) {
     e.preventDefault();     //prevenir novos clicks
     if (x < campos_max) {
-        $('#listas').append("<div><input type='text' name='player-"+ noPlayer +"' required><a href=''#'' class='remover_campo'>Remover</a></div>");
+        $('#listas').append("<div class='form-group'><div class='col'><input class='form-control' type='text' placeholder='Player "+ noPlayer +"' name='player-"+ noPlayer +"' required><a href=''#'' class='remover_campo'>Remove</a></div></div>");
         x++;
         noPlayer++;
     }
@@ -15,4 +15,5 @@ $('#listas').on("click", ".remover_campo", function (e) {
     e.preventDefault();
     $(this).parent('div').remove();
     x--;
+    noPlayer--;
 });
