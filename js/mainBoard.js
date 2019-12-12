@@ -72,10 +72,21 @@ drake.on("dragend", function(el){
   removeButton(el);
 });
 
-
 function removeButton(el) {
   if(el.getElementsByClassName('btn')[1] != null && el.parentNode.id != "ready"){
     el.getElementsByClassName('btn')[1].remove();
+  }
+}
+
+function blockButton(el){
+  if(el.classList.contains('btn-danger')){
+    el.classList.remove('btn-danger');
+    el.classList.add('btn-success')
+    el.innerHTML = "B";
+  }else if (el.classList.contains('btn-success')) {
+    el.classList.add('btn-danger');
+    el.classList.remove('btn-success');
+    el.innerHTML = " ̶B̶";
   }
 }
 
@@ -107,17 +118,19 @@ function showStats() {
 function addTask() {
   /* Get task text from input */
   var inputTask = document.getElementById("taskText").value;
-  /* Add task to the 'To Do' column */
-  getNamesInitials();
-  var selectPlayers = "";
-  for (var i = 0; i < newNames.length; i++) {
-    selectPlayers = selectPlayers + "<option>" + newNames[i] + "</option>"
-  }
-  document.getElementById("ready").innerHTML +=
-  "<li><div class='task'><div class='portlet'><div class='portlet-header'><form class='form-inline'><div class='form-group'><select class='form-control' id='names'><option></option>" + selectPlayers + "</select></div><div class='form-group'><label class='stats' hidden>SD</label><label class='startDay' hidden></label></div><div class='form-group'><label class='stats' hidden>ED</label><label class='endDay' hidden></label></div></form></div><div class='portlet-content'><p>" +  inputTask + "</p></div><div class='portlet-footer'><form class='form-inline'><div class='form-group'><div class='btn-group-toggle' data-toggle='buttons'><label class='btn btn-primary btn-sm'><input type='checkbox' checked autocomplete='off'>B</label></div></div><label class='toReady' hidden>"+ iteration + "</label><button type='button' class='btn btn-danger btn-sm' onclick='removeTask(this.parentNode.parentNode.parentNode.parentNode)'><span class='glyphicon glyphicon-trash'></span></button></form></div></div></div></li>"
+  if (inputTask != "") {
+    /* Add task to the 'To Do' column */
+    getNamesInitials();
+    var selectPlayers = "";
+    for (var i = 0; i < newNames.length; i++) {
+      selectPlayers = selectPlayers + "<option>" + newNames[i] + "</option>"
+    }
+    document.getElementById("ready").innerHTML +=
+    "<li><div class='task'><div class='portlet'><div class='portlet-header'><form class='form-inline'><div class='form-group'><select class='form-control' id='names'><option></option>" + selectPlayers + "</select></div><div class='form-group'><label class='stats' hidden>SD</label><label class='startDay' hidden></label></div><div class='form-group'><label class='stats' hidden>ED</label><label class='endDay' hidden></label></div></form></div><div class='portlet-content'><p>" +  inputTask + "</p></div><div class='portlet-footer'><form class='form-inline'><div class='form-group'><button type='button' class='btn btn-success btn-sm' onclick='blockButton(this)'>B</button></div><label class='toReady' hidden>"+ iteration + "</label><button type='button' class='btn btn-danger btn-sm' id='trash' onclick='removeTask(this.parentNode.parentNode.parentNode.parentNode)'><span class='glyphicon glyphicon-trash'></span></button></form></div></div></div></li>"
 
-  /* Clear task text from input after adding task */
-  document.getElementById("taskText").value = "";
+    /* Clear task text from input after adding task */
+    document.getElementById("taskText").value = "";
+  }
 }
 
 /* Funtion to add turns to the game with a limit of 99 */

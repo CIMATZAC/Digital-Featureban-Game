@@ -40,7 +40,7 @@ body {
   cursor: pointer;
 }
 
-.btn-danger{
+#trash{
   position: relative;
   right: 0;
   margin-left: 70px;
@@ -173,6 +173,8 @@ ul{
   text-align: center;
   position: relative;
   right: 12%;
+  min-width: 150px;
+  max-width: 150px;
 }
 
 li{
@@ -184,11 +186,16 @@ label{
 }
 
 .stats, .startDay, .endDay{
-  font-size: 12px;
+  font-size: 10px;
 }
 
 #names{
   width: 70px;
+}
+
+.portlet{
+  max-width: 150px;
+  min-width: 150px;
 }
 
 .portlet-header{
