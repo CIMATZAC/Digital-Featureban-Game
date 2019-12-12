@@ -9,9 +9,10 @@ body{
   text-align: justify;
 }
 
+
 .showcase::after{
     content: '';
-    height: 100vh;    
+    height: 100vh;
     width: 100%;
     background-image: url('../figures/kanban-1.jpg');
     background-size: cover;
@@ -21,16 +22,20 @@ body{
     filter: blur(10px);
     -webkit-filter: blur(10px) ;
     transition: all 1000ms;
+
 }
 
+/*
 .showcase:hover::after{
     filter: blur(0px);
     -webkit-filter: blur(0px) ;
 }
+
 .showcase:hover .content{
     filter: blur(2px);
     -webkit-filter: blur(2px) ;
 }
+*/
 
 .content{
     position: absolute;
